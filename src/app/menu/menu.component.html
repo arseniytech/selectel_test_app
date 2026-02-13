@@ -1,0 +1,31 @@
+<div class="container">
+  <a routerLink="/">Назад</a>
+  
+  <div class="header" *ngIf="currentSection">
+    <p>Раздел: {{currentSection.name}}</p>
+    <p>Выбрано пунктов: {{getSelectedCount()}}</p>
+    <p>Общее значение: {{getTotalValue()}}</p>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <div *ngFor="let section of sections" 
+           (click)="selectSection(section)"
+           class="section-item"
+           [class.active]="currentSection?.id === section.id">
+        {{section.name}}
+      </div>
+    </div>
+
+    <div class="items">
+      <div *ngFor="let item of currentSection?.items">
+        <label>
+          <input type="checkbox" 
+                 [(ngModel)]="item.selected"
+                 (change)="updateCounts()">
+          {{item.name}} - Value: {{item.value}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

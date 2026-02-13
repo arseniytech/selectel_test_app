@@ -1,0 +1,39 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  margin: 20px 0;
+}
+
+.content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.section-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.section-item.active {
+  background: #ddd;
+}
+
+.items {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.items label {
+  display: block;
+  padding: 5px;
+}
